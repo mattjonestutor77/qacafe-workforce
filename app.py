@@ -1,16 +1,20 @@
 from flask import Flask, request, jsonify, render_template
 from database import conn, cursor
 
+
 # Create the Flask application
 app = Flask(__name__)
 
+
 def calculate_remaining_holiday(entitlement, days_taken):
     return entitlement - days_taken
+
 
 # Home page
 @app.route("/")
 def home():
     return render_template("index.html")
+
 
 # Employees endpoint
 @app.route("/employees", methods=["GET", "POST"])

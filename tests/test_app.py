@@ -6,10 +6,12 @@ def test_calculate_remaining_holiday():
 
     assert result == 20
 
+
 def test_no_holiday_taken():
     result = calculate_remaining_holiday(25, 0)
 
     assert result == 25
+
 
 def test_all_holiday_taken():
     result = calculate_remaining_holiday(25, 25)
