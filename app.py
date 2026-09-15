@@ -4,6 +4,9 @@ from database import conn, cursor
 # Create the Flask application
 app = Flask(__name__)
 
+def calculate_remaining_holiday(entitlement, days_taken):
+    return entitlement - days_taken
+
 # Home page
 @app.route("/")
 def home():
