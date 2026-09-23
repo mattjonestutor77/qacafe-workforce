@@ -46,6 +46,21 @@ def manage_employees():
 
         return "Employee added successfully", 201
 
+# Search employees by name
+@app.route("/employees/search")
+def search_employees():
+
+    name = request.args.get("name", "")
+
+    query = (
+        "SELECT * FROM employees "
+        "WHERE name LIKE '%" + name + "%'"
+    )
+
+    cursor.execute(query)
+    employees = cursor.fetchall()
+
+    return jsonify(employees)
 
 # Run the application
 if __name__ == "__main__":
