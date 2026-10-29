@@ -15,6 +15,8 @@ def test_get_employees():
         assert isinstance(data, list)
 
         request.dispose()
+
+
 def test_add_employee():
     with sync_playwright() as playwright:
         request = playwright.request.new_context(
